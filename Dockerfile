@@ -16,3 +16,4 @@ RUN npm config set strict-ssl false
 
 RUN npm install -g @angular/cli
 RUN npm install
+RUN docker login -u sirimalla
