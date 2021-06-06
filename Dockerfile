@@ -16,4 +16,3 @@ RUN npm config set strict-ssl false
 
 RUN npm install -g @angular/cli
 RUN npm install
-RUN ng serve
