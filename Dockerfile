@@ -1,6 +1,8 @@
 FROM node:latest AS build
 WORKDIR /app
 COPY package.json ./
+
+RUN npm cache clean --force
 RUN npm config rm proxy
 RUN npm config rm proxy --global
 RUN npm config rm https-proxy
@@ -16,6 +18,7 @@ RUN npm config set strict-ssl false
 RUN npm install -g @angular/cli
 RUN npm install
 COPY . .
+
 RUN npm run build -prod
 
 
